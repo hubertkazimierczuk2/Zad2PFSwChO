@@ -23,8 +23,8 @@ jobs:
         name: Login to DockerHub
         uses: docker/login-action@v1 
         with:
-          username: ${{ secrets.HUB_NAME }}
-          password: ${{ secrets.HUB_TOKEN }}
+          username: ${{ secrets.LOGIN }}
+          password: ${{ secrets.TOKEN }}
       -
         name: Build and push
         uses: docker/build-push-action@v2
@@ -32,4 +32,4 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64,linux/arm
           push: true
-          tags: ${{ secrets.HUB_NAME }}/zad2:latest
+          tags: ${{ secrets.LOGIN }}/zad2:latest
